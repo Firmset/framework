@@ -1,0 +1,25 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "./packages"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "debug": "^4.3.5",
+    "sequelize": "^6.37.3",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "description": ""
+}
+

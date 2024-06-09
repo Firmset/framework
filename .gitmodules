@@ -1,0 +1,3 @@
+[submodule "packages/ts-config"]
+	path = packages/ts-config
+	url = https://github.com/blackhorse00042/ts-config.git
