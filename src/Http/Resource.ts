@@ -14,7 +14,7 @@ interface Constructor<T, D> {
 
 export default class Resource<
   TModelAttributes extends TBasicAttributes,
-  TCreationAttributes extends TBasicAttributes = TModelAttributes
+  TCreationAttributes extends Omit<TBasicAttributes, "id"> = TModelAttributes
 > {
   Model: Constructor<
     Model<TModelAttributes, TCreationAttributes>,
