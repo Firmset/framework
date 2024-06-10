@@ -1,9 +1,3 @@
-import Environment from "./Environment";
-import Logger from "./Logger";
+export { default as Environment } from "./environment";
+export { default as Logger } from "./logger";
 
-const Utils = {
-  Environment,
-  Logger
-};
-
-export default Utils;

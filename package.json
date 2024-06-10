@@ -12,6 +12,16 @@
   "workspaces": [
     "./packages"
   ],
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    },
+    "./src/messenger": {
+      "import": "./src/messenger/index.ts",
+      "require": "./src/messenger/index.ts"
+    }
+  },
   "devDependencies": {
     "typescript": "^5.4.5"
   },
@@ -24,3 +34,4 @@
   },
   "description": ""
 }
+
