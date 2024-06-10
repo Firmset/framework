@@ -12,9 +12,7 @@ export default class Environment {
     key: keyof typeof env,
     defaultValue?: D
   ): D extends number ? number : number | undefined {
-    return (env?.[key] || defaultValue) as D extends number
-      ? number
-      : number | undefined;
+    return (Number(env?.[key]) || defaultValue) as any;
   }
 
   static string<E, D extends string | undefined>(
@@ -22,9 +20,7 @@ export default class Environment {
     key: keyof typeof env,
     defaultValue?: D
   ): D extends string ? string : string | undefined {
-    return (env?.[key] || defaultValue) as D extends string
-      ? string
-      : string | undefined;
+    return (env?.[key] || defaultValue) as any;
   }
 
   static boolean<E, D extends boolean | undefined>(
@@ -32,9 +28,7 @@ export default class Environment {
     key: keyof typeof env,
     defaultValue?: D
   ): D extends boolean ? boolean : boolean | undefined {
-    return (env?.[key] || defaultValue) as D extends boolean
-      ? boolean
-      : boolean | undefined;
+    return (env?.[key] === "true" || defaultValue) as any;
   }
 }
 
