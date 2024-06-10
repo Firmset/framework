@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "debug": "^4.3.5",
+    "mysql2": "^3.10.0",
     "sequelize": "^6.37.3",
     "ts-config": "file:packages/ts-config",
     "tsconfig-paths": "^4.2.0"
