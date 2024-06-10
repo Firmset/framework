@@ -1,38 +1,40 @@
-import _ from "lodash";
-
 export default class Environment {
   static get<E, T extends keyof E>(
     env: E,
     key: T,
-    defaultValue: E[T] | undefined = undefined
+    defaultValue?: E[T]
   ): E[T] | undefined {
     return (env?.[key] as E[T]) || defaultValue;
   }
 
-  static number<E>(
+  static number<E, D extends number | undefined>(
     env: E,
     key: keyof typeof env,
-    defaultValue: number | undefined = undefined
-  ): typeof defaultValue extends number ? number : number | undefined {
-    return Number(env?.[key]) || defaultValue;
+    defaultValue?: D
+  ): D extends number ? number : number | undefined {
+    return (env?.[key] || defaultValue) as D extends number
+      ? number
+      : number | undefined;
   }
 
-  static string<E>(
+  static string<E, D extends string | undefined>(
     env: E,
     key: keyof typeof env,
-    defaultValue: string | undefined = undefined
-  ): typeof defaultValue extends string ? number : string | undefined {
-    return String(env?.[key]) || defaultValue;
+    defaultValue?: D
+  ): D extends string ? string : string | undefined {
+    return (env?.[key] || defaultValue) as D extends string
+      ? string
+      : string | undefined;
   }
 
-  static boolean<E>(
+  static boolean<E, D extends boolean | undefined>(
     env: E,
     key: keyof typeof env,
-    defaultValue: boolean | undefined = undefined
-  ): typeof defaultValue extends boolean ? boolean : boolean | undefined {
-    return _.includes(_.keys(env), key as string)
-      ? env[key] === "true"
-      : defaultValue;
+    defaultValue?: D
+  ): D extends boolean ? boolean : boolean | undefined {
+    return (env?.[key] || defaultValue) as D extends boolean
+      ? boolean
+      : boolean | undefined;
   }
 }
 
