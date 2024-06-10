@@ -1,4 +1,4 @@
-import Resource from "./Resource";
+import Resource from "./resource";
 
 const Http = {
   Resource

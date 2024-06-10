@@ -1,5 +1,5 @@
 import debug from "debug";
-import Environment from "./Environment";
+import Environment from "./environment";
 
 const prefix = Environment.get(process.env, "DEBUG_PREFIX", "project");
 
