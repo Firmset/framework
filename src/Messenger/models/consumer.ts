@@ -1,6 +1,6 @@
 import _ from "lodash";
 import MessengerMessage, { MessengerEntity } from "../database";
-import Logger from "../../utils/logger";
+import Logger from "../../Utils/logger";
 
 abstract class Consumer<Queue extends string> {
   queueNames: Array<Queue>;

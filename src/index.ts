@@ -1,6 +1,5 @@
-export { default as Http } from "./http";
-export { default as Resource } from "./http/resource";
-export * as Utils from "./utils";
-export { default as Logger } from "./utils/logger";
-export { default as Environment } from "./utils/environment";
+export { default as Http } from "./Http";
+export { default as Resource } from "./Http/Resource";
+export { default as Logger } from "./Utils/logger";
+export { default as Environment } from "./Utils/Environment";
 
